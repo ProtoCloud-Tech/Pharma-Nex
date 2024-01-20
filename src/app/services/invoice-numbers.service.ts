@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { invoice } from '../models/entity-model/invoice';
+import { invoiceNumber } from '../models/entity-model/invoiceNumber';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InvoiceDetailsService {
+export class InvoiceNumberService {
 
   constructor() { }
 
-  private invoiceData : invoice[] =  [
+  private invoiceNumberData : invoiceNumber[] =  [
     { id: 1, invoiceNumber: 'SGRHGTH985' },
     { id: 2, invoiceNumber: 'SFTGTEG346'},
     { id: 3, invoiceNumber: 'SDFSYRF963'}
   ];
 
-  getAllInvoices(): invoice[]{
-    return this.invoiceData;
+  getAllInvoiceNumbers(): invoiceNumber[]{
+    return this.invoiceNumberData;
   }
 }

@@ -1,4 +1,4 @@
-export interface invoice {
+export interface invoiceNumber {
     id:number
     invoiceNumber: string;
   }

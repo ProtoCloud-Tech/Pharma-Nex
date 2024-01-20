@@ -1,28 +1,31 @@
-import { Component } from '@angular/core';
-import { InvvoiceServicesService } from './service/invoice-services.service';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { InvoiceInformation } from '../models/entity-model/invoice-information';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { invoiceDetailsDto } from "../models/dto-model/invoiceDetailsDto";
 
 @Component({
-  selector: 'app-invoice-detail',
+  selector: "app-invoice-detail",
   standalone: true,
-  imports: [CommonModule,FormsModule,FormsModule],
-  templateUrl: './invoice-detail.component.html',
-  styleUrl: './invoice-detail.component.css'
+  imports: [CommonModule, FormsModule, FormsModule],
+  templateUrl: "./invoice-detail.component.html",
+  styleUrl: "./invoice-detail.component.css",
 })
 export class InvoiceDetailComponent {
+  gross: number = 55625;
+  cgst: number = 1390.625;
+  sgst: number = 1390.625;
+  discount: number = 100;
+  paid: number = 8306;
 
-  invoiceData : InvoiceInformation[] = [];
+  invoiceDetail: invoiceDetailsDto = new invoiceDetailsDto(
+    this.gross,
+    this.cgst,
+    this.sgst,
+    this.discount,
+    this.paid
+  );
 
-  constructor(
-    // private route: ActivatedRoute,
-     private invvoiceservices: InvvoiceServicesService
-  
-   ) { }
-   ngOnInit(): void {
-   this.invoiceData = this.invvoiceservices.getAllInvoiceDetails();
-   console.log( this.invoiceData)
-   }
+  ngOnInit(): void {
+    console.log(this.invoiceDetail);
+  }
 }

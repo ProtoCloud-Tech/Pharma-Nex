@@ -1,6 +1,6 @@
 import { Customer } from "../entity-model/customer";
 import { Doctor } from "../entity-model/doctor";
-import { invoice } from "../entity-model/invoice";
+import { invoiceNumber } from "../entity-model/invoiceNumber";
 
 export class customerDetailsDto {
 
@@ -12,7 +12,7 @@ export class customerDetailsDto {
     this.date = new Date();
   }
   customer: Customer
-  invoiceNumber?: invoice;
+  invoiceNumber?: invoiceNumber;
   referredby?: Doctor;
   date: Date
 }
