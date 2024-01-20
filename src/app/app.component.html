@@ -1,0 +1,292 @@
+<!-- <app-leftsidebar></app-leftsidebar>
+<app-customer-details></app-customer-details>
+<app-product-tabel></app-product-tabel>
+<app-product-cart></app-product-cart> -->
+
+
+<section class="dashboard-header">
+    <div class="container-fluid ">
+        <div class="main-dashboard row">
+            <div id="left-dash" class="dashboard-leftbar">
+                <h4>Pharma Nex</h4>
+                <div class="left-dashboard">
+                    <div class="logo big-logo"><a href="#">
+                            <img class="" src="../assets/images/avatar.png" alt=""></a>
+                        <div class="name">
+                            <h6>henry Clark</h6>
+                            <p>Admin manager</p>
+                        </div>
+                    </div>
+                    <div class="logo small-logo"><a href="#">
+                            <img src="../assets/images/avatar.png" alt=""> </a>
+                    </div>
+                    <div id="open-close" class="text-end"><a href="#"><img src="../assets/images/close.png" alt=""></a>
+                    </div>
+                    <ul class="dashboard-tab">
+                        <li></li>
+                    </ul>
+                    <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="dash-tab dblock active" id="v-pills-dashboard-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-dashboard" type="button" role="tab"
+                            aria-controls="v-pills-dashboard" aria-selected="true"> <span class="img-change"><img
+                                    class="before-active" src="../assets/images/home.png" alt=""><img class="after-active"
+                                    src="../assets/images/home-fill.png" alt=""></span> <span class="dnone">Dashboard
+                            </span></button>
+                        <button class="dash-tab dblock" id="v-pills-calender-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-calender" type="button" role="tab"
+                            aria-controls="v-pills-calender" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/graph.png" alt=""><img class="after-active"
+                                    src="../assets/images/graph-fill.png" alt=""></span><span class="dnone">
+                                Sales</span></button>
+                        <button class="dash-tab dblock" id="v-pills-sales-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-sales" type="button" role="tab" aria-controls="v-pills-sales"
+                            aria-selected="false"><span class="img-change"><img class="before-active"
+                                    src="../assets/images/cash.png" alt=""><img class="after-active"
+                                    src="../assets/images/cash-fill.png" alt=""></span><span class="dnone">
+                                Purchase</span></button>
+                        <button class="dash-tab dblock" id="v-pills-clients-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-clients" type="button" role="tab"
+                            aria-controls="v-pills-clients" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/stock.png" alt=""><img class="after-active"
+                                    src="../assets/images/stock-fill.png" alt=""></span><span class="dnone">
+                                Inventory</span></button>
+                        <button class="dash-tab dblock" id="v-pills-catalouge-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-catalouge" type="button" role="tab"
+                            aria-controls="v-pills-catalouge" aria-selected="true"> <span class="img-change"><img
+                                    class="before-active" src="../assets/images/file.png" alt=""><img class="after-active"
+                                    src="../assets/images/file-fill.png" alt=""></span><span class="dnone">Receipts</span>
+                        </button>
+                        <button class="dash-tab dblock" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-profile" type="button" role="tab"
+                            aria-controls="v-pills-profile" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/payment.png" alt=""><img class="after-active"
+                                    src="../assets/images/payment-fill.png" alt=""></span><span class="dnone">
+                                Payments</span></button>
+                        <button class="dash-tab dblock" id="v-pills-promote-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-promote" type="button" role="tab"
+                            aria-controls="v-pills-promote" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/calculator.png" alt=""><img
+                                    class="after-active" src="../assets/images/calculator-fill.png" alt=""></span><span
+                                class="dnone">
+                                Accounts</span></button>
+                        <button class="dash-tab dblock" id="v-pills-report-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-report" type="button" role="tab" aria-controls="v-pills-report"
+                            aria-selected="false"><span class="img-change"><img class="before-active"
+                                    src="../assets/images/tax.png" alt=""><img class="after-active" src="../assets/images/tax-fill.png"
+                                    alt=""></span><span class="dnone">
+                                GST</span></button>
+                        <button class="dash-tab dblock" id="v-pills-settings-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-settings" type="button" role="tab"
+                            aria-controls="v-pills-settings" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/eye.png" alt=""><img class="after-active"
+                                    src="../assets/images/eye-fill.png" alt=""></span><span class="dnone">
+                                View</span></button>
+                        <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-support" type="button" role="tab"
+                            aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/files.png" alt=""><img class="after-active"
+                                    src="../assets/images/files-fill.png" alt=""></span><span class="dnone">
+                                Reports</span></button>
+                        <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-support" type="button" role="tab"
+                            aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/search.png" alt=""><img class="after-active"
+                                    src="../assets/images/search-fill.png" alt=""></span><span class="dnone">
+                                Analysis</span></button>
+                        <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-support" type="button" role="tab"
+                            aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/help.png" alt=""><img class="after-active"
+                                    src="../assets/images/help-fill.png" alt=""></span><span class="dnone">
+                                Help & Support </span></button>
+                        <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-support" type="button" role="tab"
+                            aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
+                                    class="before-active" src="../assets/images/setting.png" alt=""><img class="after-active"
+                                    src="../assets/images/setting-fill.png" alt=""></span><span class="dnone">
+                                Settings</span></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="right-dash" class="dashboard-rightbar">
+                <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
+                    aria-labelledby="v-pills-dashboard-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="heading-box">
+                                <h4>Welcome Back</h4>
+                                <p>Have a Good Day!</p>
+                            </div>
+                           
+                            <app-customer-details></app-customer-details>
+
+                            <div class="product-table table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Batch</th>
+                                        <th>Expiry Date</th>
+                                        <th>MRP</th>
+                                        <th>Qty</th>
+                                        <th>Disc</th>
+                                        <th>Tax</th>
+                                        <th>SalesTax</th>
+                                        <th>Amount</th>
+                                        <th>Tax Amount</th>
+                                        <th>Final Amount</th>
+                                    </tr>
+                                    <tr>
+                                        <td>GUFITRIG 5000 IU</td>
+                                        <td>APO05N51</td>
+                                        <td>07/26</td>
+                                        <td>438.32</td>
+                                        <td>10.00</td>
+                                        <td>5</td>
+                                        <td>TPG1</td>
+                                        <td>TSG1</td>
+                                        <td>2190.52</td>
+                                        <td>109.52</td>
+                                        <td>2300.04</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Items: 1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="heading-btn">
+                                    <button class="btn"><img src="../assets/images/add.png" alt=""> Add item</button>
+                                    <button class="btn delete"><img src="../assets/images/delete.png" alt=""> Remove
+                                        item</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="heading-btn">
+                                <button class="btn"><img src="../assets/images/add.png" alt=""> New</button>
+                                <button class="btn"><img src="../assets/images/save.png" alt=""> Save</button>
+                                <button class="btn delete"><img src="../assets/images/delete.png" alt=""> Delete</button>
+                                <img src="../assets/images/dots.png" alt="">
+                            </div>
+                            <div class="invoice-info">
+                                <h4>Invoice Information & Payment</h4>
+                                <div class="d-flex justify-content-between">
+                                    <p>Gross</p>
+                                    <p>₹55,625.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Cash Disc.</p>
+                                    <p class="input">-0.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Other Adj.</p>
+                                    <p class="input">-0.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Bill Amount</p>
+                                    <p>₹55,625.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Total Tax:</p>
+                                    <p>2781.25</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="cgst">CGST#2.5</p>
+                                    <p class="cgst">1390.625</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="cgst">SGST#2.5</p>
+                                    <p class="cgst">1390.625</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Discounts:</p>
+                                    <p>-100.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Round Off</p>
+                                    <p>-0.25</p>
+                                </div>
+                                <div class="d-flex justify-content-between net-total">
+                                    <p class="net-price">NET:</p>
+                                    <p class="net-price">₹58,306.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Paid</p>
+                                    <p>₹8,306.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Due.</p>
+                                    <p>50,000.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
