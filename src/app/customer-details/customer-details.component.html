@@ -21,12 +21,12 @@
                     </div>
                     <div class="grid-box">
                         <label>GST No.</label>
-                        <input tabindex="2" placeholder="GST Number" type="text" name="gstNumber" pInputText
+                        <input  placeholder="GST Number" type="text" name="gstNumber" pInputText
                             [(ngModel)]="selectedCustomerDetail.customer.gstNumber" [disabled]="true" />
                     </div>
                     <div class="grid-box">
                         <label>Invoice No.</label>
-                        <p-dropdown [tabindex]="3" [options]="invoicesData" [(ngModel)]="selectedCustomerDetail.invoiceNumber" optionLabel="invoiceNumber"
+                        <p-dropdown [tabindex]="2" [options]="invoicesData" [(ngModel)]="selectedCustomerDetail.invoiceNumber" optionLabel="invoiceNumber"
                             [filter]="true" filterBy="invoiceNumber" [showClear]="true" placeholder="Select a Invoice">
                          </p-dropdown>
                     </div>
@@ -37,21 +37,21 @@
                         <label>Address</label>
                         <div class="card flex justify-content-center">
                             <textarea rows="3" cols="30" placeholder="Customer Address" pInputTextarea
-                                [(ngModel)]="selectedCustomerDetail.customer.address" tabindex="4" [disabled]="true"></textarea>
+                                [(ngModel)]="selectedCustomerDetail.customer.address"  [disabled]="true"></textarea>
                         </div>
                     </div>
                     <div class="grid-template">
                         <div class="new-d-grid">
                             <div class="grid-box">
                                 <label>Refer by.</label>
-                                <p-dropdown [tabindex]="5" [options]="doctorsData"
+                                <p-dropdown [tabindex]="3" [options]="doctorsData"
                                     [(ngModel)]="selectedCustomerDetail.referredby" optionLabel="name" [filter]="true"
                                     filterBy="name" [showClear]="true" placeholder="Select a Doctor">
                                 </p-dropdown>
                             </div>
                             <div class="grid-box">
                                 <label>Date</label>
-                                <p-calendar [tabindex]="6" [(ngModel)]="selectedCustomerDetail.date"></p-calendar>
+                                <p-calendar [tabindex]="4" [(ngModel)]="selectedCustomerDetail.date"></p-calendar>
                             </div>
                         </div>
                     </div>
