@@ -1,27 +1,29 @@
-# Pharmanex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+## 1. Install Node.js:
 
-## Development server
+Make sure you have Node.js installed on your System. You can download it from the official website: [Node.js Download](https://nodejs.org/en/download)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Verify the installation by running the following commands in your terminal or command prompt:
+```bash
+node -v
+npm -v
 
-## Code scaffolding
+## Install Angular CLI globally on your system using npm. Open your terminal or command prompt and run:
+`npm install -g @angular/cli`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Verify the installation and check the Angular CLI version:
+`ng --version`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+##  Download your Angular project . Open the project in Visual Studio Code .
 
-## Running unit tests
+## In the Visual Studio Code terminal, navigate to your project directory and install project dependencies: 
+`npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Start the Angular development server with the following command:
+`ng serve --open`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
