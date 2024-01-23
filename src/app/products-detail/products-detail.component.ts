@@ -100,13 +100,14 @@ export class ProductsDetailComponent implements OnInit{
     }
   }
 
-  getSumOfPropertyValue(propertyName: string): number {
-    let sumOfValues = 0;
-    this.items.forEach((item) => {
-      sumOfValues += !isNaN(parseFloat(item[propertyName]))
-        ? parseFloat(item[propertyName])
-        : 0;
-    });
-    return sumOfValues;
-  }
+  // getSumOfPropertyValue(propertyName: string): number {
+  //   let sumOfValues = 0;
+  //   this.items.forEach((item: Item) => {
+  //     sumOfValues += !isNaN(parseFloat(item[propertyName as keyof typeof Item]))
+  //       ? parseFloat(item[propertyName])
+  //       : 0;
+  //   });
+  //   return sumOfValues;
+  // }
+
 }

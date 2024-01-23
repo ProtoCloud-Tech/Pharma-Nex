@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../models/entity-model/product';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
+
 export class ProductService {
   getProductsData(): Product[] {
     return [

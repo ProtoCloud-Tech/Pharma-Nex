@@ -1,4 +1,4 @@
-<div class="product-table table-responsive">
+<!-- <div class="product-table table-responsive">
     <table class="table">
         <tr>
             <th>Product</th>
@@ -97,10 +97,10 @@
         <button class="btn delete"><img src="../../assets/images/delete.png" alt=""> Remove
             item</button>
     </div>
-</div>
+</div> -->
 
-<div class="card">
-    <p-table
+<div class="card product-table table-responsive">
+    <p-table class="table"
       [value]="items"
       dataKey="id"
       styleClass="p-datatable-gridlines"
@@ -169,7 +169,7 @@
           <td>{{ item.finalAmount | number:'1.2-2' }}</td>
         </tr>
       </ng-template>
-      <ng-template pTemplate="footer">
+      <!-- <ng-template pTemplate="footer">
         <tr>
           <td>Total Items: {{items ? items.length : 0 }}</td>
           <td></td>
@@ -185,7 +185,7 @@
             {{ this.getSumOfPropertyValue('finalAmount') | number:'1.2-2' }}
           </td>
         </tr>
-      </ng-template>
+      </ng-template> -->
       
     </p-table>
   </div>
