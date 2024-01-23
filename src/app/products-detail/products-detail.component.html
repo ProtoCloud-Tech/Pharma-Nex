@@ -98,3 +98,95 @@
             item</button>
     </div>
 </div>
+
+<div class="card">
+    <p-table
+      [value]="items"
+      dataKey="id"
+      styleClass="p-datatable-gridlines"
+      [tableStyle]="{ 'min-width': '75rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 18%">Product</th>
+          <th style="width: 8%">Batch</th>
+          <th style="width: 8%">Expiry Date</th>
+          <th style="width: 8%">MRP</th>
+          <th style="width: 8%">Qty</th>
+          <th style="width: 8%">Disc %</th>
+          <th style="width: 8%">Tax</th>
+          <th style="width: 8%">Sales Tax</th>
+          <th style="width: 8%">Amount</th>
+          <th style="width: 8%">Tax Amount</th>
+          <th style="width: 10%">Final Amount</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td tabindex="1">
+            <p-dropdown
+              [options]="products"
+              optionLabel="name"
+              optionValue="id"
+              [(ngModel)]="item.productId"
+              [filter]="true"
+              filterBy="name"
+              [virtualScroll]="true"
+              [virtualScrollItemSize]="25"
+              [editable]="true"
+              (onChange)="onProductChange($event,item)"
+            ></p-dropdown>
+          </td>
+          <td>{{ item.batch }}</td>
+          <td>{{ item.expiryDate }}</td>
+          <td>{{ item.mrp | number:'1.2-2' }}</td>
+          <td tabindex="2">
+            <p-inputNumber
+              (onBlur)="onQuantityUpdate($event,item)"
+              [min]="0"
+              [max]="100"
+              [(ngModel)]="item.qty"
+              
+            >
+            </p-inputNumber>
+          </td>
+          <td tabindex="3">
+            <p-inputNumber
+              [min]="0"
+              [max]="100"
+              [minFractionDigits]="2"
+              [maxFractionDigits]="2"
+              [(ngModel)]="item.discPercent"
+              (onBlur)="onDiscountPercentUpdate($event,item)"
+              
+            >
+            </p-inputNumber>
+          </td>
+          <td>{{ item.tax }}</td>
+          <td>{{ item.salesTax }}</td>
+          <td>{{ item.amount | number:'1.2-2' }}</td>
+          <td>{{ item.taxAmount | number:'1.2-2' }}</td>
+          <td>{{ item.finalAmount | number:'1.2-2' }}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <tr>
+          <td>Total Items: {{items ? items.length : 0 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ this.getSumOfPropertyValue('qty') }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ this.getSumOfPropertyValue('amount') | number:'1.2-2' }}</td>
+          <td>{{ this.getSumOfPropertyValue('taxAmount') | number:'1.2-2'}}</td>
+          <td>
+            {{ this.getSumOfPropertyValue('finalAmount') | number:'1.2-2' }}
+          </td>
+        </tr>
+      </ng-template>
+      
+    </p-table>
+  </div>
+  

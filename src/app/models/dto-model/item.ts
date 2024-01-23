@@ -5,7 +5,7 @@ export class Item {
   }
 
   id: number;
-  productId: number;
+  productId?: number;
   name?: string;
   batch?: string;
   expiryDate?: string;
@@ -18,4 +18,6 @@ export class Item {
   gstPercent?: number;
   taxAmount?: number;
   finalAmount?: number;
+
+  
 }
