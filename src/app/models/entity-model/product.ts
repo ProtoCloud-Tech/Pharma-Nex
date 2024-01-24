@@ -4,7 +4,7 @@ export interface Product {
   batch: string;
   expiryDate: Date;
   mrp: number;
-  tax?: string;
-  salesTax?: string;
-  gst?: number;
+  tax: string;
+  salesTax: string;
+  gst: number;
 }

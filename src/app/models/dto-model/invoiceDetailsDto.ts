@@ -1,22 +1,23 @@
 import { ThisReceiver } from "@angular/compiler";
 
 export class invoiceDetailsDto {
-  constructor(gross: number, cgst: number, sgst: number, discount: number, paid: number) {
-    this.gross = gross;
+  constructor(grossAmount: number, billAmount: number, cgst: number, sgst: number, discount: number, 
+    cashDiscount: number, otherAdjustment: number, paid: number) {
+    this.grossAmount = grossAmount;
     this.cgst = cgst;
     this.sgst = sgst;
+    this.billAmount = billAmount;
     this.discount = discount;
+    this.cashDiscount = cashDiscount;
+    this.otherAdjustment = otherAdjustment;
     this.paid = paid;
-    this.cashDiscount = 0;
-    this.otherAdjustment = 0;
-    this.billAmount = this.getBillAmount();
     this.totalTax = this.getTotalTax();
     this.net = this.getRoundedOffNet();;
     this.roundOff = this.getRoundOffVal();
     this.due = this.getDue();
   }
 
-  gross: number;
+  grossAmount: number;
   cashDiscount: number;
   otherAdjustment: number;
   billAmount: number;
@@ -34,7 +35,7 @@ export class invoiceDetailsDto {
   }
 
   public getNet(): number {
-    return (this.billAmount + this.totalTax - this.discount);
+    return (this.billAmount + this.totalTax);
   }
 
   public getRoundedOffNet(): number {
@@ -50,6 +51,6 @@ export class invoiceDetailsDto {
   }
 
   public getBillAmount(): number {
-    return (this.gross - this.cashDiscount - this.otherAdjustment);
+    return (this.grossAmount - this.cashDiscount - this.otherAdjustment);
   }
 }
