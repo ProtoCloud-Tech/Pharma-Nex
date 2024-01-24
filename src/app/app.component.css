@@ -31,10 +31,12 @@ a {
   outline: none;
 }
 
-:focus-visible {
+/* :focus-visible {
   outline: auto 0px;
+} */
+:focus-visible {
+  outline-color: #0159c26e;
 }
-
 img {
   max-width: 100%;
   height: auto;
@@ -77,7 +79,6 @@ img {
 }
 .dashboard-header .dash-tab {
   border: 0;
-  text-align: left;
   margin-bottom: 20px;
   color: #353535;
   font-size: 16px;
@@ -125,14 +126,14 @@ img {
 
   width: 18%;
   transition: width 0.2s;
-  position: sticky;
+  position: absolute;
   top: 0;
   padding-left: 0;
   padding-right: 0;
+  z-index: 9;
 }
 .dashboard-leftbar .left-dashboard {
   background-color: #fff;
-  margin-top: 28px;
   border-radius: 5px;
 }
 .dashboard-leftbar.remove-width .left-dashboard{
@@ -143,26 +144,30 @@ img {
   font-size: 22px;
   text-transform: uppercase;
   font-weight: 600;
-  padding-top: 15px;
+  padding-top: 30px;
+  background-color: #EFF3F6;
+  margin-bottom: 0;
+  padding-bottom: 28px;
 }
 .dashboard-leftbar.remove-width h4{
   font-size:15px;
+  padding-bottom: 0;
 }
 .remove-width {
   width: 5.5%;
 }
 .dashboard-rightbar {
-  width: 82%;
+  width: 94%;
+  margin-left: auto;
 }
-.increse-width {
-  width: 92%;
-}
+
 .remove-width .dnone {
   display: none;
 }
 .remove-width .dblock {
   display: block;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .remove-width .nav {
   padding-left: 10px;
@@ -350,173 +355,141 @@ padding: 11px 0;
 
 
 
+
+
+
+
+
+
+
+
 /* check on 992  */
-
-
-/* dashboadrd start */
-
-@media screen and (max-width:1360px){
-   
-    .remove-width {
-        width: 9%;
-    }
-    .increse-width {
-        width: 91%;
-    }
- 
-}
-
-
-
-
-
-
-
-@media screen and (max-width:1199px){
-    
-    .dashboard-rightbar {
-        width: 75%;
-    }
-    .dashboard-leftbar {
-        width: 25%;
-    }
-   
-    .remove-width {
-        width: 10%;
-    }
-    .increse-width {
-        width: 90%;
-    }
-
-}
-
-
-/* dashboard end */
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 @media screen and (max-width:1024px){
-    h1 {
-        font-size: 45px;
-        line-height: 60px;
-    }
-    h2 {
-        font-size: 35px;
-        line-height: 45px;
-    }
- 
+  h1 {
+      font-size: 45px;
+      line-height: 60px;
+  }
+  h2 {
+      font-size: 35px;
+      line-height: 45px;
+  }
+  .dashboard-header {
+      margin: 15px 15px;
+  }
+  .dashboard-header .dash-tab {
+      padding: 8px 8px;
+  }
 
-
+  .dashboard-rightbar .heading-btn button {
+      margin-right: 10px;
+  }
+  .btn {
+      font-size: 13px;
+      padding: 8px 10px;
+  }
 }
+
 
 
 /* check on 768 */
 
 @media screen and (max-width:991px){
-    .navbar-toggler-icon {
-        /* background-image: url("../images/menu.png"); */
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-        margin: 8px 0 0 0;
-    }
-   
-    h1 {
-        font-size: 35px;
-    }
-    h2 {
-        font-size: 30px;
-        line-height: 40px;
-    }
-    body {
-        font-size: 14px;
-        line-height: 20.5px;
-    }
-   
-
-    /* dashboard start*/
-
-   
-    .dashboard-leftbar {
-        width: 30%;
-    }
-    .dashboard-rightbar {
-        width: 70%;
-    }
+  .navbar-toggler-icon {
+      /* background-image: url("../images/menu.png"); */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      margin: 8px 0 0 0;
+  }
  
-    .remove-width {
-        width: 10%;
-    }
-    .increse-width {
-        width: 87%;
-    }
-    .dashboard-header {
-        margin: 20px;
-    }
-    .accordion-body  label {
-        font-size: 12px;
-    }
-    .accordion-body .d-grid {
-        column-gap: 10px;
-        margin-bottom: 20px;
-    }
-    .accordion-body .new-grid {
-        column-gap: 10px;
-    }
-    .accordion-body .new-d-grid {
-        column-gap: 10px;
-        margin-bottom: 20px;
-    }
-    .accordion-body {
-        padding: 10px;
-    }
-    .accordion-button {
-        font-size: 20px;
-        padding: 10px 10px 0;
-    }
-    .dashboard-rightbar .heading-box p {
-        font-size: 14px;
-        margin-bottom: 5px;
-    }
-    .dashboard-rightbar .heading-box h4 {
-        font-size: 20px;
-    }
-    .dashboard-leftbar .left-dashboard {
-        margin-top: 13px;
-    }
-    .product-table.table-responsive th {
-        font-size: 16px;
-    }
-    .product-table.table-responsive td {
-        font-size: 15px;
-    }
-    .product-table.table-responsive tr:last-child td {
-        font-size: 16px;
-    }
-    .dashboard-rightbar .col-lg-4{
-        margin-top: 20px;
-    }
-    .invoice-info {
-        margin-top: 15px;
-    }
-    .invoice-info h4 {
-        margin-bottom: 30px;
-    }
-    .invoice-info .d-flex .net-price {
-        font-size: 21px;
-    }
-    /* dashboard end*/
+  h1 {
+      font-size: 35px;
+  }
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  body {
+      font-size: 14px;
+      line-height: 20.5px;
+  }
+ 
+
+  /* dashboard start*/
+
+ 
+  .dashboard-leftbar {
+      width: 30%;
+  }
+  
+
+  .remove-width {
+      width: 8%;
+  }
+  .dashboard-rightbar {
+      width: 90%;
+  }
+  .dashboard-header {
+      margin: 20px;
+  }
+  .accordion-body  label {
+      font-size: 12px;
+  }
+  .accordion-body .d-grid {
+      column-gap: 10px;
+      margin-bottom: 20px;
+  }
+  .accordion-body .new-grid {
+      column-gap: 10px;
+  }
+  .accordion-body .new-d-grid {
+      column-gap: 10px;
+      margin-bottom: 20px;
+  }
+  .accordion-body {
+      padding: 10px;
+  }
+  .accordion-button {
+      font-size: 20px;
+      padding: 10px 10px 0;
+  }
+  .dashboard-rightbar .heading-box p {
+      font-size: 14px;
+      margin-bottom: 5px;
+  }
+  .dashboard-rightbar .heading-box h4 {
+      font-size: 20px;
+  }
+ 
+  .product-table.table-responsive th {
+      font-size: 16px;
+  }
+  .product-table.table-responsive td {
+      font-size: 15px;
+  }
+  .product-table.table-responsive tr:last-child td {
+      font-size: 16px;
+  }
+  .dashboard-rightbar .col-lg-4{
+      margin-top: 20px;
+  }
+  .invoice-info {
+      margin-top: 15px;
+  }
+  .invoice-info h4 {
+      margin-bottom: 30px;
+  }
+  .invoice-info .d-flex .net-price {
+      font-size: 21px;
+  }
+  .dashboard-leftbar h4 {
+      padding-top: 20px;
+  }
+  /* dashboard end*/
 
 }
 
@@ -524,143 +497,155 @@ padding: 11px 0;
 /* check on 360 */
 
 @media screen and (max-width:767px){
-    h1 {
-        font-size: 25px;
-        line-height: 40px;
-    }
-  
-    h2 {
-        font-size: 22px;
-        line-height: 30px;
-    }
-  
-    h6 {
-        font-size: 14px;
-    }
-   
+  h1 {
+      font-size: 25px;
+      line-height: 40px;
+  }
 
-    /* dashboard start*/ 
+  h2 {
+      font-size: 22px;
+      line-height: 30px;
+  }
 
-    .dashboard-leftbar .big-logo {
-        display: none;
-    }
-    .dashboard-leftbar .small-logo {
-        display: block;
-    }
-    .dashboard-leftbar .dnone {
-        display: none;
-    }
-    .dashboard-header .dash-tab {
-        margin-bottom: 20px;
-        font-size: 0;
-        padding: 0;
-        justify-content: center;
-    }
-    .dashboard-header .dash-tab .img-change {
-        margin-right: 0px;
-    }
-    .dashboard-leftbar {
-        width: 18%;
-    }
-    .dashboard-header .logo {
-        padding: 15px 10px 10px;
-    }
-    .dashboard-header .nav {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #open-close{
-        display: none;
-    }
-    .dashboard-rightbar .d-grid.align-items-center.justify-content-between {
-        padding: 15px 10px;
-        display: block !important;
-    }
-    .dashboard-head-left {
-        margin-bottom: 10px;
-    }
-    .dashboard-rightbar {
-        width: 82%;
-    }
-    .dashboard-head-right .header-icon a {
-        margin-right: 20px;
-    }
-    .dashboard-header {
-        margin: 10px;
-    }
-    .dashboard-leftbar h4 {
-        font-size: 15px;
-    }
-    .dashboard-rightbar .heading-box h4 {
-        font-size: 18px;
-    }
-    .dashboard-leftbar .left-dashboard {
-        margin-top: 15px;
-    }
-    .accordion-button {
-        font-size: 18px;
-    }
-    .accordion-body .d-grid {
-        grid-template-columns: 1fr;
-    }
-    .accordion-body .d-grid .grid-box{
-        margin-bottom: 10px;
-    }
-    .accordion-body .new-grid {
-        grid-template-columns: 1fr;
-    }
-    .accordion-body .new-d-grid {
-        grid-template-columns: 1fr;
-    }
-    .accordion-body .new-d-grid .grid-box{
-        margin-bottom: 10px;
-    }
-    .accordion-body .new-d-grid {
-        margin-bottom: 0;
-    }
-    .accordion-body .grid-box textarea {
-        margin-bottom: 10px;
-    }
-    .product-table.table-responsive {
-        padding: 20px 10px;
-        margin-top: 20px;
-    }
-    .product-table.table-responsive th {
-        font-size: 15px;
-    }
-    .product-table.table-responsive td {
-        font-size: 14px;
-    }
-    .product-table.table-responsive tr:last-child td {
-        font-size: 15px;
-    }
-    .dashboard-rightbar .heading-btn button {
-        margin-right: 5px;
-    }
-    .btn {
-        font-size: 13px;
-        padding: 8px 9px;
-    }
-    .invoice-info {
-        padding: 20px 10px;
-    }
-    .invoice-info h4 {
-        margin-bottom: 20px;
-        font-size: 16px;
-    }
-    .invoice-info .d-flex p {
-        font-size: 14px;
-    }
-    .invoice-info .d-flex {
-        margin-bottom: 10px;
-    }
-    .invoice-info .d-flex .net-price {
-        font-size: 19px;
-    }
-    .dashboard-leftbar h4 {
-        padding-top: 1px;
-    }
-   /* dashboard end*/ 
+  h6 {
+      font-size: 14px;
+  }
+ 
+
+  /* dashboard start*/ 
+
+  .dashboard-leftbar .big-logo {
+      display: none;
+  }
+  .dashboard-leftbar .small-logo {
+      display: block;
+  }
+  .dashboard-leftbar .dnone {
+      display: none;
+  }
+  .dashboard-header .dash-tab {
+      margin-bottom: 20px;
+      font-size: 0;
+      padding: 0;
+      text-align: center;
+  }
+  .dashboard-header .dash-tab.active{
+      text-align: center;
+  }
+  .dashboard-header .dash-tab .img-change {
+      margin-right: 0px;
+  }
+  .dashboard-leftbar {
+      width: 13%;
+  }
+  .dashboard-header .logo {
+      padding: 10px 5px 0px;
+  }
+  .dashboard-header .nav {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  #open-close{
+      display: none;
+  }
+  .dashboard-rightbar .d-grid.align-items-center.justify-content-between {
+      padding: 15px 10px;
+      display: block !important;
+  }
+  .dashboard-head-left {
+      margin-bottom: 10px;
+  }
+  .dashboard-rightbar {
+      width: 85%;
+  }
+  .dashboard-head-right .header-icon a {
+      margin-right: 20px;
+  }
+  .dashboard-header {
+      margin: 10px;
+  }
+  .dashboard-leftbar h4 {
+      font-size: 15px;
+  }
+  .dashboard-rightbar .heading-box h4 {
+      font-size: 18px;
+  }
+  .dashboard-leftbar .left-dashboard {
+      margin-top: 15px;
+  }
+  .accordion-button {
+      font-size: 18px;
+  }
+  .accordion-body .d-grid {
+      grid-template-columns: 1fr;
+  }
+  .accordion-body .d-grid .grid-box{
+      margin-bottom: 10px;
+  }
+  .accordion-body .new-grid {
+      grid-template-columns: 1fr;
+  }
+  .accordion-body .new-d-grid {
+      grid-template-columns: 1fr;
+  }
+  .accordion-body .new-d-grid .grid-box{
+      margin-bottom: 10px;
+  }
+  .accordion-body .new-d-grid {
+      margin-bottom: 0;
+  }
+  .accordion-body .grid-box textarea {
+      margin-bottom: 10px;
+  }
+  .product-table.table-responsive {
+      padding: 20px 10px;
+      margin-top: 20px;
+  }
+  .product-table.table-responsive th {
+      font-size: 15px;
+  }
+  .product-table.table-responsive td {
+      font-size: 14px;
+  }
+  .product-table.table-responsive tr:last-child td {
+      font-size: 15px;
+  }
+  .dashboard-rightbar .heading-btn button {
+      margin-right: 5px;
+  }
+  .btn {
+      font-size: 13px;
+      padding: 8px 9px;
+  }
+  .invoice-info {
+      padding: 20px 10px;
+  }
+  .invoice-info h4 {
+      margin-bottom: 20px;
+      font-size: 16px;
+  }
+  .invoice-info .d-flex p {
+      font-size: 14px;
+  }
+  .invoice-info .d-flex {
+      margin-bottom: 10px;
+  }
+  .invoice-info .d-flex .net-price {
+      font-size: 19px;
+  }
+  .dashboard-leftbar h4 {
+      padding-top: 12px;
+  }
+  .dashboard-leftbar.remove-width h4 {
+      font-size: 13px;
+  }
+  .dashboard-leftbar.remove-width .left-dashboard {
+      padding: 0 5px;
+  }
+  .dashboard-header .dash-tab.active .img-change .after-active {
+      margin: auto;
+  }
+ /* dashboard end*/ 
 
 
 }

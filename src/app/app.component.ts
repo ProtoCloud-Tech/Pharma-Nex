@@ -20,4 +20,10 @@ import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 })
 export class AppComponent {
   title = 'pharmanex';
+
+  isClassAdded: boolean = true;
+
+  handleToggleClass() {
+    this.isClassAdded = !this.isClassAdded;
+  }
 }
