@@ -11,6 +11,7 @@ import { ItemTotal } from "../models/dto-model/itemTotal";
   imports: [CommonModule, FormsModule, FormsModule],
   templateUrl: "./invoice-detail.component.html",
   styleUrl: "./invoice-detail.component.css",
+  
 })
 export class InvoiceDetailComponent {
 

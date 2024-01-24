@@ -7,8 +7,8 @@
 <section class="dashboard-header">
     <div class="container-fluid ">
         <div class="main-dashboard row">
-            <div id="left-dash" class="dashboard-leftbar">
-                <app-left-sidebar></app-left-sidebar>
+            <div id="left-dash" class="dashboard-leftbar  " [class.remove-width]="isClassAdded">
+                <app-left-sidebar (toggleClassEvent)="handleToggleClass()"></app-left-sidebar>
             </div>
 
             <div id="right-dash" class="dashboard-rightbar">

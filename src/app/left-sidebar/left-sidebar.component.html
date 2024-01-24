@@ -11,7 +11,7 @@
         <div class="logo small-logo"><a href="#">
                 <img src="../../assets/images/avatar.png" alt=""> </a>
         </div>
-        <div id="open-close" class="text-end"><a href="#"><img src="../../assets/images/close.png" alt=""></a>
+        <div id="open-close" (click)="toggleClass()" class="text-end"><a href="#"><img src="../../assets/images/close.png" alt=""></a>
         </div>
         <ul class="dashboard-tab">
             <li></li>
@@ -89,7 +89,7 @@
                 aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
                         class="before-active" src="../../assets/images/help.png" alt=""><img class="after-active"
                         src="../../assets/images/help-fill.png" alt=""></span><span class="dnone">
-                    Help & Support </span></button>
+                    Help & Support </span></button> 
             <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
                 data-bs-target="#v-pills-support" type="button" role="tab"
                 aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
