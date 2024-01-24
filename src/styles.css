@@ -302,7 +302,7 @@ color: #353535;
 .table-width{
   width: 50%;
 }
-.product-table.table-responsive tr:last-child td{
+tfoot.p-datatable-tfoot.ng-star-inserted tr td{
   background-color: #AECAEB;
   font-size: 18px;
   font-weight: 600;
@@ -311,6 +311,12 @@ color: #353535;
   background-color: #fff;
   border: 1px solid #FF3C3C !important;
   color: #FF3C3C;
+}
+.product-table input.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled {
+  width: 15%;
+}
+.product-table .p-dropdown ul {
+  padding: 0;
 }
 .invoice-info {
   background-color: #fff;
@@ -485,7 +491,7 @@ padding: 11px 0;
   .product-table.table-responsive td {
       font-size: 15px;
   }
-  .product-table.table-responsive tr:last-child td {
+  tfoot.p-datatable-tfoot.ng-star-inserted tr td {
       font-size: 16px;
   }
   .dashboard-rightbar .col-lg-4{
@@ -621,7 +627,7 @@ padding: 11px 0;
   .product-table.table-responsive td {
       font-size: 14px;
   }
-  .product-table.table-responsive tr:last-child td {
+  tfoot.p-datatable-tfoot.ng-star-inserted tr td {
       font-size: 15px;
   }
   .dashboard-rightbar .heading-btn button {
