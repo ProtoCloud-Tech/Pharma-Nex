@@ -34,6 +34,7 @@ a {
 /* :focus-visible {
   outline: auto 0px;
 } */
+.p-component:focus-visible,
 :focus-visible {
   outline-color: #0159c26e;
 }
@@ -314,6 +315,9 @@ tfoot.p-datatable-tfoot.ng-star-inserted tr td{
 }
 .product-table input.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled {
   width: 15%;
+}
+.dashboard-rightbar .tab-pane  input.input.ng-pristine.ng-valid.ng-touched {
+  width: 20%;
 }
 .product-table .p-dropdown ul {
   padding: 0;
