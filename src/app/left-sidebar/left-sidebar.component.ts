@@ -14,6 +14,4 @@ export class LeftSidebarComponent {
   toggleClass() {
     this.toggleClassEvent.emit();
   }
-  
-
 }

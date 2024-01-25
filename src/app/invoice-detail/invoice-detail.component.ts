@@ -4,20 +4,20 @@ import { FormsModule } from "@angular/forms";
 import { invoiceDetailsDto } from "../models/dto-model/invoiceDetailsDto";
 import { InvoiceGeneratorService } from "../services/invoice-generator.service";
 import { ItemTotal } from "../models/dto-model/itemTotal";
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @Component({
-  selector: "app-invoice-detail",
+  selector: 'app-invoice-detail',
   standalone: true,
-  imports: [CommonModule, FormsModule, FormsModule],
-  templateUrl: "./invoice-detail.component.html",
-  styleUrl: "./invoice-detail.component.css",
-  
+  imports: [CommonModule, FormsModule, FormsModule, InputNumberModule],
+  templateUrl: './invoice-detail.component.html',
+  styleUrl: './invoice-detail.component.css'
 })
-export class InvoiceDetailComponent {
 
+export class InvoiceDetailComponent {
   cashDiscount:number = 0;
   otherAdjustment:number = 0;
-  paid:number = 0;
+  paidAmount:number = 0;
   invoiceDetail!: invoiceDetailsDto;
   constructor(private invoiceGeneratorService: InvoiceGeneratorService) { }
 
@@ -31,12 +31,12 @@ export class InvoiceDetailComponent {
         (totalObj.grossAmount - totalObj.finalAmount),
         this.cashDiscount,
         this.otherAdjustment,
-        this.paid
+        this.paidAmount
       );
     });
   }
 
-  onCashDiscountUpdate(event: any) {
+  onCashDiscountUpdate(event:any) {
     if (event.relatedTarget) {
       this.invoiceDetail.cashDiscount = this.cashDiscount;
       this.updateInvoice();
@@ -51,10 +51,10 @@ export class InvoiceDetailComponent {
   }
 
   onPaidUpdate(event: any) {
-    if (event.relatedTarget) {
-      this.invoiceDetail.paid =this.paid;
+    //if (event.relatedTarget) {
+      this.invoiceDetail.paid =this.paidAmount;
       this.updateInvoice();
-    }
+    //}
   }
 
   updateInvoice() {
@@ -68,6 +68,8 @@ export class InvoiceDetailComponent {
       this.invoiceDetail.otherAdjustment,
       this.invoiceDetail.paid
     );
+
+    console.log(this.invoiceDetail);
   }
   
 }
