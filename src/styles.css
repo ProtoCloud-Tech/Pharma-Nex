@@ -283,6 +283,9 @@ color: #353535;
   margin-top: 30px;
   border-radius: 6px;
 }
+.product-table input.p-inputtext.p-component.p-element.p-inputnumber-input {
+  width: 15%;
+}
 .product-table.table-responsive td,
 .product-table.table-responsive th{
   border: 1px solid rgba(21, 21, 21, 0.20);
@@ -291,6 +294,21 @@ color: #353535;
 .product-table.table-responsive td{
   height: 40px;
 }
+
+#open-close span {
+  background-color: #0159C2;
+  padding: 1px 8px 1px 10px;
+  border-radius: 10px 0 0 10px;
+}
+
+.remove-width #open-close span img{
+  transition: 0.1s;
+  transform: rotate(180deg);
+}
+.invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled, .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input {
+  width: 4rem;
+}
+
 .product-table.table-responsive th {
   background-color: #AECAEB;
   font-size: 18px;
