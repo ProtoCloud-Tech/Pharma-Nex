@@ -13,13 +13,13 @@
     </div>
     <div class="d-flex justify-content-between">
         <p>Cash Disc.</p>
-        <input tabindex="7" class="input" type="text" pInputText [(ngModel)]="cashDiscount"
-            (onBlur)="onCashDiscountUpdate($event)">
+        <p-inputNumber [(ngModel)]="cashDiscount" mode="decimal" [min]="0" [minFractionDigits]="2"
+            [maxFractionDigits]="2" (onBlur)="onCashDiscountUpdate($event)"> </p-inputNumber>
     </div>
-    <div class="d-flex justify-content-between">
+    <div class=" d-flex justify-content-between">
         <p>Other Adj.</p>
-        <input tabindex="8" class="input" type="text" pInputText [(ngModel)]="otherAdjustment"
-            (onBlur)="onOtherAdjustmentUpdate($event)">
+        <p-inputNumber [(ngModel)]="otherAdjustment" mode="decimal" [min]="0" [minFractionDigits]="2"
+            [maxFractionDigits]="2" (onBlur)="onOtherAdjustmentUpdate($event)"> </p-inputNumber>
     </div>
     <div class="d-flex justify-content-between">
         <p>Bill Amount</p>
@@ -30,11 +30,13 @@
         <p>{{ invoiceDetail.totalTax | number:'1.2-2'}}</p>
     </div>
     <div class="d-flex justify-content-between">
-        <p class="cgst">CGST&#64;2.5</p>
+        <p class="cgst">CGST</p>
+        <!-- <p class="cgst">CGST&#64;2.5</p> -->
         <p class="cgst">{{ invoiceDetail.cgst | number:'1.3-3'}}</p>
     </div>
     <div class="d-flex justify-content-between">
-        <p class="cgst">SGST&#64;2.5</p>
+        <p class="cgst">SGST</p>
+        <!-- <p class="cgst">SGST&#64;2.5</p> -->
         <p class="cgst">{{ invoiceDetail.sgst | number:'1.3-3'}}</p>
     </div>
     <div class="d-flex justify-content-between">
@@ -51,8 +53,8 @@
     </div>
     <div class="d-flex justify-content-between">
         <p>Paid</p>
-        <input tabindex="9" class="input" type="text" pInputText [(ngModel)]="paid"
-            (onBlur)="onPaidUpdate($event)">
+        <p-inputNumber [(ngModel)]="paidAmount" mode="decimal" [min]="0" [minFractionDigits]="2" [maxFractionDigits]="2"
+            (onBlur)="onPaidUpdate($event)"> </p-inputNumber>
     </div>
     <div class="d-flex justify-content-between">
         <p>Due.</p>

@@ -28,6 +28,7 @@ export class ProductsDetailComponent implements OnInit {
   items: Item[] = [];
   totalObj?: ItemTotal;
 
+  rowCountAtBeggining = 5;
   itemCounter: number = 1;
   dateLocale: string = 'en-US';
   dateFormatOpt: Intl.DateTimeFormatOptions = {
@@ -44,14 +45,20 @@ export class ProductsDetailComponent implements OnInit {
     this.productService.getProducts().then((data) => {
       this.products = data;
 
-      this.items.push(new Item(this.itemCounter++));
-      this.items.push(new Item(this.itemCounter++));
-      this.items.push(new Item(this.itemCounter++));
-      this.items.push(new Item(this.itemCounter++));
-      this.items.push(new Item(this.itemCounter++));
+      this.initializeTableRow();
+      this.initializeFooterTotalObj();
 
-      this.calculateTotalFields();
     });
+  }
+
+  initializeTableRow() {
+    for (let i = 0; i < this.rowCountAtBeggining; i++) {
+      this.items.push(new Item(this.itemCounter++));
+    }
+  }
+
+  initializeFooterTotalObj() {
+    this.calculateTotalFields()
   }
 
   onProductChange(event: any, item: Item) {
@@ -75,23 +82,11 @@ export class ProductsDetailComponent implements OnInit {
     item.qty = 1;
     item.discPercent = this.defaultDiscountPercent;
 
-    // update amount calculation fields
-    this.calculateItemAmount(item);
   }
 
-  onQuantityUpdate(event: any, item: Item) {
-    if (event.relatedTarget) {
-      let quantity = event.target.value;
-      item.qty = quantity as number;
-      this.calculateItemAmount(item);
-    }
-  }
-
-  onDiscountPercentUpdate(event: any, item: Item) {
-    if (event.relatedTarget) {
-      item.discPercent = event.target.value;
-      this.calculateItemAmount(item);
-    }
+  onEditComplete(event: any) {
+    this.calculateItemAmount(this.items[event.index]);
+    this.calculateTotalFields();
   }
 
   calculateItemAmount(item: Item) {
@@ -99,8 +94,6 @@ export class ProductsDetailComponent implements OnInit {
     item.finalAmount = (item.grossAmount * (100 - item.discPercent)) / 100;
     item.taxAmount = (item.finalAmount * item.gstPercent) / 100;
     item.amount = item.finalAmount - item.taxAmount;
-    this.calculateTotalFields();
-
   }
 
   calculateTotalFields() {
@@ -125,9 +118,17 @@ export class ProductsDetailComponent implements OnInit {
         sumOfValues += item[str] as number;
       } else if (typeof item[str] === 'string') {
         sumOfValues += parseFloat(item[str] as string);
-      } 
+      }
     });
     return sumOfValues;
   }
 
+  addItem() {
+    this.items.push(new Item(this.itemCounter++));
+  }
+  deleteItem() {
+    this.items.splice(2, 1);
+  }
 }
+
+

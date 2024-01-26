@@ -35,7 +35,7 @@ export class invoiceDetailsDto {
   }
 
   public getNet(): number {
-    return (this.billAmount + this.totalTax);
+    return (this.billAmount + this.totalTax - this.cashDiscount - this.otherAdjustment);
   }
 
   public getRoundedOffNet(): number {
