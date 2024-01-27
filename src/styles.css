@@ -440,9 +440,8 @@ input:disabled {
 }
 
 /* new css */
-.accordion-item .p-dropdown-items, .accordion-item .p-inputtext.p-placeholder{
+.accordion-item .p-dropdown-items, .accordion-item .p-inputtext.p-placeholder, .accordion-item span.p-element.p-dropdown-label.p-inputtext.ng-star-inserted {
   padding: 0;
-  
 }
 
 #collapseOne1 .ng-trigger.ng-trigger-overlayAnimation.ng-tns-c2791360511-0.p-datepicker.p-component.ng-star-inserted {
