@@ -440,7 +440,7 @@ input:disabled {
 }
 
 /* new css */
-.accordion-item .ng-star-inserted{
+.accordion-item .p-dropdown-items, .accordion-item .p-inputtext.p-placeholder{
   padding: 0;
   
 }
