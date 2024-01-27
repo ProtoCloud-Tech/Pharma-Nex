@@ -1,7 +1,7 @@
 <div class="accordion" id="accordionExample1">
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1"
+            <button class="accordion-button"  [tabIndex]="0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1"
                 aria-expanded="true" aria-controls="collapseOne1">
                 Customer Details
             </button>
@@ -12,23 +12,27 @@
                 <div class="d-grid">
                     <div class="grid-box">
                         <label>Name</label>
-                        <div class=" flex justify-content-center">
+                        <div class=" flex justify-content-center" [tabindex]="0">
                             <p-dropdown [options]="customersData" [(ngModel)]="selectedCustomerDetail.customer"
                                 optionLabel="name" (onChange)="onSelectCustomer()" [filter]="true" filterBy="name"
-                                [showClear]="true" placeholder="Select a Customer" [tabindex]="1">
+                                [showClear]="true" placeholder="Select a Customer" [tabindex]="0">
                             </p-dropdown>
                         </div>
                     </div>
                     <div class="grid-box">
                         <label>GST No.</label>
+                       
                         <input  placeholder="GST Number" type="text" name="gstNumber" pInputText
                             [(ngModel)]="selectedCustomerDetail.customer.gstNumber" [disabled]="true" />
+                           
                     </div>
-                    <div class="grid-box">
+                    <div class="grid-box" >
                         <label>Invoice No.</label>
-                        <p-dropdown [tabindex]="2" [options]="invoiceNumberData" [(ngModel)]="selectedCustomerDetail.invoiceNumber" optionLabel="invoiceNumber"
+                        <div class=" flex justify-content-center" [tabindex]="0">
+                        <p-dropdown [tabindex]="0" [options]="invoiceNumberData" [(ngModel)]="selectedCustomerDetail.invoiceNumber" optionLabel="invoiceNumber"
                             [filter]="true" filterBy="invoiceNumber" [showClear]="true" placeholder="Select a Invoice">
                          </p-dropdown>
+                         </div>
                     </div>
                 </div>
 
@@ -44,14 +48,18 @@
                         <div class="new-d-grid">
                             <div class="grid-box">
                                 <label>Refer by.</label>
-                                <p-dropdown [tabindex]="3" [options]="doctorsData"
+                                <div class=" flex justify-content-center" [tabindex]="0">
+                                <p-dropdown [tabindex]="0" [options]="doctorsData"
                                     [(ngModel)]="selectedCustomerDetail.referredby" optionLabel="name" [filter]="true"
                                     filterBy="name" [showClear]="true" placeholder="Select a Doctor">
                                 </p-dropdown>
+                                </div>
                             </div>
                             <div class="grid-box">
                                 <label>Date</label>
-                               <p> <p-calendar [tabindex]="4" [(ngModel)]="selectedCustomerDetail.date"></p-calendar></p>
+                                <div class=" flex justify-content-center" [tabindex]="0">
+                               <p> <p-calendar [tabindex]="0" [(ngModel)]="selectedCustomerDetail.date"></p-calendar></p>
+                            </div>
                             </div>
                         </div>
                     </div>
