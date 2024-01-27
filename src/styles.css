@@ -306,7 +306,7 @@ color: #353535;
   transform: rotate(180deg);
 }
 .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled, .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input {
-  width: 4rem;
+  width: 8rem;
 }
 
 .product-table.table-responsive th {
@@ -422,12 +422,16 @@ padding: 11px 0;
   }
 }
 
-
 /* new css */
 .accordion-item .ng-star-inserted{
   padding: 0;
   
 }
+
+#collapseOne1 .ng-trigger.ng-trigger-overlayAnimation.ng-tns-c2791360511-0.p-datepicker.p-component.ng-star-inserted {
+  padding: 5px;
+}
+
 .accordion-item span.ng-tns-c2791360511-0.p-calendar {
   width: 100%;
 }
