@@ -26,17 +26,19 @@ import { InvoiceGeneratorService } from '../services/invoice-generator.service';
 export class ProductsDetailComponent implements OnInit {
   products: Product[] = [];
   items: Item[] = [];
+  selectedItem!: Item;
   totalObj?: ItemTotal;
 
-  rowCountAtBeggining = 5;
-  itemCounter: number = 1;
-  dateLocale: string = 'en-US';
-  dateFormatOpt: Intl.DateTimeFormatOptions = {
+  readonly defaultRowCount = 2;
+  readonly defaultQtyCount: number = 1;
+  readonly defaultDiscountPercent: number = 5;
+  readonly dateLocale: string = 'en-US';
+  readonly dateFormatOpt: Intl.DateTimeFormatOptions = {
     month: '2-digit',
     year: '2-digit',
   };
-  defaultDiscountPercent: number = 5;
 
+  itemCounter: number = 1;
   constructor(private productService: ProductService,
     private invoiceGeneratorService: InvoiceGeneratorService) {
   }
@@ -45,25 +47,23 @@ export class ProductsDetailComponent implements OnInit {
     this.productService.getProducts().then((data) => {
       this.products = data;
 
-      this.initializeTableRow();
-      this.initializeFooterTotalObj();
-
+      this.initializeItemRows();
+      this.initializeFooterObject();
     });
   }
 
-  initializeTableRow() {
-    for (let i = 0; i < this.rowCountAtBeggining; i++) {
-      this.items.push(new Item(this.itemCounter++));
+  initializeItemRows() {
+    for (let i = 0; i < this.defaultRowCount; i++) {
+      this.items.push(new Item((this.itemCounter++)));
     }
   }
 
-  initializeFooterTotalObj() {
-    this.calculateTotalFields()
+  initializeFooterObject() {
+    this.calculateTotalFields();
   }
 
   onProductChange(event: any, item: Item) {
     let productid = event.value;
-
     let currentProduct: Product | undefined = this.products.find((m) => m.id === productid);
     if (currentProduct) {
       item.name = currentProduct.name;
@@ -79,31 +79,32 @@ export class ProductsDetailComponent implements OnInit {
     }
 
     //set default values of user input field
-    item.qty = 1;
+    item.qty = this.defaultQtyCount;
     item.discPercent = this.defaultDiscountPercent;
 
+    this.reCalculateItems(item);
   }
 
-  onEditComplete(event: any) {
-    this.calculateItemAmount(this.items[event.index]);
+  reCalculateItems(item: Item) {
+    this.calculateItemAmount(item);
     this.calculateTotalFields();
   }
 
   calculateItemAmount(item: Item) {
-    item.grossAmount = item.mrp * item.qty;
-    item.finalAmount = (item.grossAmount * (100 - item.discPercent)) / 100;
+    item.grossAmount = (item.mrp! * item.qty!);
+    item.finalAmount = (item.grossAmount * (100 - item.discPercent!)) / 100;
     item.taxAmount = (item.finalAmount * item.gstPercent) / 100;
-    item.amount = item.finalAmount - item.taxAmount;
+    item.amount = (item.finalAmount - item.taxAmount);
   }
 
   calculateTotalFields() {
     this.totalObj = {
       count: this.items.filter(m => m.productId > 0).length,
-      amount: this.getSumOfPropertyValue('amount'),
-      qty: this.getSumOfPropertyValue('qty'),
-      taxAmount: this.getSumOfPropertyValue('taxAmount'),
-      finalAmount: this.getSumOfPropertyValue('finalAmount'),
-      grossAmount: this.getSumOfPropertyValue('grossAmount')
+      amount: this.getSumOfPropertyValue(CalculatedFields.amount),
+      qty: this.getSumOfPropertyValue(CalculatedFields.qty),
+      taxAmount: this.getSumOfPropertyValue(CalculatedFields.taxAmount),
+      finalAmount: this.getSumOfPropertyValue(CalculatedFields.finalAmount),
+      grossAmount: this.getSumOfPropertyValue(CalculatedFields.grossAmount)
     }
 
     this.invoiceGeneratorService.generate(this.totalObj);
@@ -126,9 +127,37 @@ export class ProductsDetailComponent implements OnInit {
   addItem() {
     this.items.push(new Item(this.itemCounter++));
   }
+
   deleteItem() {
-    this.items.splice(2, 1);
+    let selectedRowIndex = this.getSelectedRowIndex();
+    if (selectedRowIndex !== -1) {
+      this.items.splice(selectedRowIndex, 1);
+      this.calculateTotalFields();
+    }
+  }
+  getSelectedRowIndex(): number {
+    if (this.selectedItem) {
+      return this.items.findIndex((object) => {
+        return object.id === this.selectedItem.id;
+      });
+    }
+    else
+      return -1;
+  }
+
+  isAddItemDisabled(): boolean {
+    return (this.items.some(m=>m.productId === 0 ));
+  }
+
+  isDeleteItemDisabled(): boolean {
+    return (this.items.length <= 1);
   }
 }
 
-
+export enum CalculatedFields {
+  amount = 'amount',
+  qty = 'qty',
+  taxAmount = 'taxAmount',
+  finalAmount = 'finalAmount',
+  grossAmount = 'grossAmount'
+}
