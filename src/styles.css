@@ -263,10 +263,16 @@ button.accordion-button.collapsed{
   height: 38px;
   border-radius: 2px;
 border: 2px solid #AECAEB;
-background: #F9F9F9;
+background: #ffff;
 box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.10);
 padding: 7px;
 color: #353535;
+}
+.product-table .btnn:disabled {
+ 
+  opacity: 0.5; 
+  cursor: not-allowed; 
+ 
 }
 .accordion-body .grid-box textarea{
   width: 100%;
@@ -286,7 +292,11 @@ color: #353535;
   background-color: #fff;
   margin-top: 30px;
   border-radius: 6px;
+  
 }
+/* .product-table.table-responsive p-table.p-element.table{
+  height: 100vh;
+} */
 .product-table input.p-inputtext.p-component.p-element.p-inputnumber-input {
   width: 15%;
   border: 2px solid #AECAEB;
