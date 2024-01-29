@@ -86,8 +86,10 @@ export class ProductsDetailComponent implements OnInit {
   }
 
   reCalculateItems(item: Item) {
-    this.calculateItemAmount(item);
-    this.calculateTotalFields();
+    if (item && item.productId > 0) {
+      this.calculateItemAmount(item);
+      this.calculateTotalFields();
+     }
   }
 
   calculateItemAmount(item: Item) {
