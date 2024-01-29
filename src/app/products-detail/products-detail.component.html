@@ -22,7 +22,7 @@
       <tr [pSelectableRow]="item">
         <td>
           <p-dropdown [options]="products"  optionLabel="name" optionValue="id" [(ngModel)]="item.productId"
-            [filter]="true" filterBy="name" [virtualScroll]="true" [virtualScrollItemSize]="25" [editable]="true"
+          [showClear]="true" appendTo="body" styleClass="ui-column-filter"  [filter]="true" filterBy="name" [virtualScroll]="true" [virtualScrollItemSize]="50" [editable]="true"
             (onChange)="onProductChange($event,item)"></p-dropdown>
         </td>
         <td>{{ item.batch }}</td>
