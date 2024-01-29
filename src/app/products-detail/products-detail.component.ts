@@ -29,7 +29,7 @@ export class ProductsDetailComponent implements OnInit {
   selectedItem!: Item;
   totalObj?: ItemTotal;
 
-  readonly defaultRowCount = 2;
+  readonly defaultRowCount = 1;
   readonly defaultQtyCount: number = 1;
   readonly defaultDiscountPercent: number = 5;
   readonly dateLocale: string = 'en-US';
