@@ -36,11 +36,22 @@ a {
 } */
 .p-component:focus-visible,
 :focus-visible {
-  outline-color: #0159c26e;
+  outline-color: #3834dd;
+}
+p-inputnumber :focus-visible,
+:focus-visible {
+  outline-color: #3834dd;
+}
+.invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled:focus, .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input:focus,
+.product-table input.p-inputtext.p-component.p-element.p-inputnumber-input:focus,
+.accordion-item #headingOne button:focus,
+div#pn_id_9:focus{
+  outline-color: #3834dd;
+  box-shadow: 0 0 0 1.5px #4f4bff;
 }
 .flex.justify-content-center:focus
 {
-  border-color: #86b7fe;;
+  border-color: #3834dd;;
 }
 img {
   max-width: 100%;
@@ -68,6 +79,9 @@ img {
 
 /* dashboard start*/
 
+.accordion-button:focus{
+  box-shadow: none;
+}
 
 .dashboard-header .logo {
   padding: 20px 15px 0;
@@ -299,7 +313,7 @@ color: #353535;
 } */
 .product-table input.p-inputtext.p-component.p-element.p-inputnumber-input {
   width: 15%;
-  border: 2px solid #AECAEB;
+  /* border: 2px solid #AECAEB; */
 }
 .product-table.table-responsive td,
 .product-table.table-responsive th{
@@ -322,7 +336,7 @@ color: #353535;
 }
 .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled, .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input {
   width: 8rem;
-  border: 2px solid #AECAEB;
+
 }
 
 .product-table.table-responsive th {
