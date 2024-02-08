@@ -1,7 +1,7 @@
 <div class="card product-table table-responsive">
   <!-- <p-table class="table" [value]="items" dataKey="id" styleClass="p-datatable-gridlines"
     [tableStyle]="{ 'min-width': '75rem' }" (onEditComplete)="onEditComplete($event)"> -->
-  <p-table class="table" [value]="items" dataKey="id" styleClass="p-datatable-gridlines"
+  <p-table  class="table" [value]="items" dataKey="id" styleClass="p-datatable-gridlines"
     [tableStyle]="{ 'min-width': '75rem' }"   selectionMode="single" [(selection)]="selectedItem">
     <ng-template pTemplate="header">
       <tr>
@@ -18,11 +18,11 @@
         <th style="width: 10%">Final Amount</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-item>
-      <tr [pSelectableRow]="item">
-        <td>
+    <ng-template  pTemplate="body" let-item>
+      <tr [tabIndex]="-1"  [pSelectableRow]="item">
+        <td class="product-names">
           <p-dropdown [tabindex]="0" [options]="products"  optionLabel="name" optionValue="id" [(ngModel)]="item.productId"
-          [showClear]="true" appendTo="body" styleClass="ui-column-filter"  [filter]="true" filterBy="name" [virtualScroll]="true" [virtualScrollItemSize]="50" [editable]="true"
+          [showClear]="false" appendTo="body" styleClass="ui-column-filter"  [filter]="true" filterBy="name" [virtualScroll]="true" [virtualScrollItemSize]="50" [editable]="true"
             (onChange)="onProductChange($event,item)"></p-dropdown>
         </td>
         <td>{{ item.batch }}</td>

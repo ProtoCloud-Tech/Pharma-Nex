@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,  AfterViewInit, ViewChild  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerServicesService } from './service/customer-services.service';
 import { CommonModule } from '@angular/common';
@@ -13,6 +13,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { customerDetailsDto } from '../models/dto-model/customerDetailsDto';
 import { InvoiceNumberService } from '../services/invoice-numbers.service';
 import { invoiceNumber } from '../models/entity-model/invoiceNumber';
+import { Dropdown } from 'primeng/dropdown';
 
 
 @Component({
@@ -23,7 +24,23 @@ import { invoiceNumber } from '../models/entity-model/invoiceNumber';
   styleUrl: './customer-details.component.css'
 })
 
-export class CustomerDetailsComponent {
+export class CustomerDetailsComponent implements AfterViewInit {
+  @ViewChild('customerDetailsDropdown') customerDetailsDropdown!: Dropdown;
+
+  ngAfterViewInit(): void {
+    this.openDropdownOnInit();
+    
+  }
+
+  openDropdownOnInit(): void {
+    if (this.customerDetailsDropdown) {
+      setTimeout(() => {
+        this.customerDetailsDropdown.overlayVisible = true;
+        
+      });
+    }
+  }
+ 
 
   customersData : Customer[] = [];
   doctorsData : Doctor[] = [];
