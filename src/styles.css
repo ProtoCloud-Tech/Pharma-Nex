@@ -38,9 +38,29 @@ a {
 :focus-visible {
   outline-color: #3834dd;
 }
+/* .customer-names .ng-star-inserted{
+border: 0 !important;
+background: transparent  !important;
+box-shadow: none  !important;
+margin-top: -8px;
+} */
 p-inputnumber :focus-visible,
 :focus-visible {
   outline-color: #3834dd;
+}
+.accordion .p-inputwrapper-focus{
+   outline: 1px solid #3834dd;
+   border-radius: 2px;
+}
+.product-names .p-inputwrapper-focus{
+  outline: 1px solid #3834dd;
+  border-radius: 2px;
+}
+.customer-names .p-inputtext {
+  margin-top: -8px;
+  border: 0px !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input.p-filled:focus, .invoice-info input.p-inputtext.p-component.p-element.p-inputnumber-input:focus,
 .product-table input.p-inputtext.p-component.p-element.p-inputnumber-input:focus,
