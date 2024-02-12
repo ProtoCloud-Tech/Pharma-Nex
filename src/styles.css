@@ -56,6 +56,10 @@ p-inputnumber :focus-visible,
   outline: 1px solid #3834dd;
   border-radius: 2px;
 }
+
+#collapseOne1 input.ng-untouched.ng-pristine.ng-valid {
+  border: 1px solid #d1d5db;
+}
 .customer-names .p-inputtext {
   margin-top: -8px;
   border: 0px !important;
@@ -294,11 +298,11 @@ button.accordion-button.collapsed{
 .accordion-body  select,
 .accordion-body  input, .p-dropdown{
   width: 100%;
-  height: 38px;
+  /* height: 38px; */
   border-radius: 2px;
-border: 2px solid #AECAEB;
+/* border: 2px solid #AECAEB; */
 background: #ffff;
-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.10);
+/* box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.10); */
 padding: 7px;
 color: #353535;
 }
@@ -435,11 +439,14 @@ padding: 11px 0;
 select:disabled ,
 textarea:disabled ,
 input:disabled {
-	border-color: #eee !important;
+	border: 2px solid #d1d5db !important;
   background-color: #eee !important;
   background: #eee !important;
 	cursor: not-allowed !important;
   opacity: 1;
+}
+#pn_id_2 .p-dropdown-label, #pn_id_3 .p-dropdown-label , #pn_id_5 .p-dropdown-label{
+  padding: 0;
 }
 /* dashboard end*/
 

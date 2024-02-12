@@ -9,8 +9,8 @@ export class Item {
     this.salesTax = '';
     this.gstPercent = 0;
     this.grossAmount = 0;
-
   }
+  
   id: number;
   productId: number;
   name: string;
