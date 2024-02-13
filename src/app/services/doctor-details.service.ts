@@ -8,13 +8,13 @@ export class DoctorDetailsService {
 
   constructor() { }
 
-  private doctorData : Doctor[] =  [
+  private doctorsData : Doctor[] =  [
     { id: 1, name: 'Dr. Vijay' },
     { id: 2, name: 'Dr. Abhinandan Sundaram'},
     { id: 3, name: 'Dr. Sandeep Sharma'},
   ];
 
   getAllDoctors(): Doctor[]{
-    return this.doctorData;
+    return this.doctorsData;
   }
 }

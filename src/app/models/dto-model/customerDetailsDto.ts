@@ -5,14 +5,10 @@ import { invoiceNumber } from "../entity-model/invoiceNumber";
 export class customerDetailsDto {
 
   constructor() {
-    this.customer = {
-      id: 0,
-      name: ''
-    }
     this.date = new Date();
   }
-  customer: Customer
-  invoiceNumber?: invoiceNumber;
+  customer?: Customer
+  invoiceNumber?: string;
   referredby?: Doctor;
   date: Date
 }
