@@ -1,0 +1,63 @@
+<div class="heading-btn">
+    <button [tabIndex]="-1" class="btnn"><img src="../../assets/images/add.png" alt=""> New</button>
+    <button [tabIndex]="-1" class="btnn"><img src="../../assets/images/save.png" alt=""> Save</button>
+    <button [tabIndex]="-1" class="btnn delete"><img src="../../assets/images/delete.png" alt=""> Delete</button>
+    <img src="../../assets/images/dots.png" alt="">
+</div>
+
+<div class="invoice-info">
+    <h4>Invoice Information & Payment</h4>
+    <div class="d-flex justify-content-between">
+        <p>Gross</p>
+        <p>₹{{ invoiceDetail.grossAmount | number:'1.2-2'}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p>Cash Disc.</p>
+        <p-inputNumber [(ngModel)]="cashDiscount" mode="decimal" [min]="0" [minFractionDigits]="2"
+            [maxFractionDigits]="2" (onBlur)="onCashDiscountUpdate($event)"> </p-inputNumber>
+    </div>
+    <div class=" d-flex justify-content-between">
+        <p>Other Adj.</p>
+        <p-inputNumber [(ngModel)]="otherAdjustment" mode="decimal" [min]="0" [minFractionDigits]="2"
+            [maxFractionDigits]="2" (onBlur)="onOtherAdjustmentUpdate($event)"> </p-inputNumber>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p>Bill Amount</p>
+        <p>₹{{ invoiceDetail.billAmount | number:'1.2-2' }}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p>Total Tax:</p>
+        <p>{{ invoiceDetail.totalTax | number:'1.2-2'}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p class="cgst">CGST</p>
+        <!-- <p class="cgst">CGST&#64;2.5</p> -->
+        <p class="cgst">{{ invoiceDetail.cgst | number:'1.3-3'}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p class="cgst">SGST</p>
+        <!-- <p class="cgst">SGST&#64;2.5</p> -->
+        <p class="cgst">{{ invoiceDetail.sgst | number:'1.3-3'}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p>Discounts:</p>
+        <p>-{{ invoiceDetail.discount | number:'1.2-2'}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p>Round Off</p>
+        <p>-{{ invoiceDetail.roundOff | number:'1.2-2'}}</p>
+    </div>
+    <div class="d-flex justify-content-between net-total">
+        <p class="net-price">NET:</p>
+        <p class="net-price">₹{{ invoiceDetail.net | number:'1.2-2'}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p>Paid</p>
+        <p-inputNumber [(ngModel)]="paidAmount" mode="decimal" [min]="0" [minFractionDigits]="2" [maxFractionDigits]="2"
+            (onBlur)="onPaidUpdate($event)"> </p-inputNumber>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p>Due.</p>
+        <p>{{ invoiceDetail.due | number:'1.2-2'}}</p>
+    </div>
+</div>

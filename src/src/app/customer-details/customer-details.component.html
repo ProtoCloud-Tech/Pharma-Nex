@@ -1,0 +1,70 @@
+<div class="accordion" id="accordionExample1">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1"
+                aria-expanded="true" aria-controls="collapseOne1" [tabindex]="-1">
+                Customer Details
+            </button>
+        </h2>
+        <div id="collapseOne1" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample1">
+            <div class="accordion-body">
+                <div class="d-grid">
+                    <!-- <div pFocusTrap class="card"> -->
+                    <div class="grid-box">
+                        <label>Name</label>
+                        <p-dropdown #customerDetailsDropdown [options]="customersData"
+                            [(ngModel)]="selectedCustomerDetail.customer" optionLabel="name" [showClear]="false"
+                            [filter]="true" filterBy="name" (onChange)="onSelectCustomer($event)" [tabindex]="0"
+                            placeholder="Select a Customer" (onFocus)="onFocusEvent($event)"
+                            [editable]="true">
+                        </p-dropdown>
+                        <!-- </div> -->
+                    </div>
+                    <div class="grid-box">
+                        <label>GST No.</label>
+                        <input placeholder="GST Number" type="text" name="gstNumber" pInputText
+                            [(ngModel)]="selectedGstNumber" [disabled]="true" />
+                    </div>
+                    <div class="grid-box">
+                        <label>Invoice No.</label>
+
+                        <input type="text" name="invoiceNumber" pInputText
+                            [(ngModel)]="selectedCustomerDetail.invoiceNumber" [tabindex]="-1" />
+                    </div>
+                </div>
+
+                <div class="new-grid">
+                    <div class="grid-box">
+                        <label>Address</label>
+                        <div class="card flex justify-content-center">
+                            <textarea rows="3" cols="30" placeholder="Customer Address" pInputTextarea
+                                [(ngModel)]="selectedCustomerAddress" [disabled]="true"></textarea>
+                        </div>
+                    </div>
+                    <div class="grid-template">
+                        <div class="new-d-grid">
+                            <div class="grid-box">
+                                <label>Refer by.</label>
+
+                                <p-dropdown #docDropdown [options]="doctorsData"
+                                    [(ngModel)]="selectedCustomerDetail.referredby" optionLabel="name" [filter]="true"
+                                    appendTo="body" filterBy="name" (onChange)="onSelectDoctor($event)"
+                                    [showClear]="false" placeholder="Select a Doctor"
+                                    (onFocus)="onDocFocusEvent($event)" [editable]="true">
+                                </p-dropdown>
+
+                            </div>
+                            <div class="grid-box">
+                                <label>Date</label>
+                                <p> <p-calendar [(ngModel)]="selectedCustomerDetail.date"></p-calendar>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

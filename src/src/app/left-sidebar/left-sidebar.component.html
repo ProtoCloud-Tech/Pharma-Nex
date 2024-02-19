@@ -1,0 +1,96 @@
+
+    <h4>Pharma Nex</h4>
+    <div [tabIndex]="-1" class="left-dashboard">
+        <div [tabIndex]="-1" class="logo big-logo"><a [tabIndex]="-1" href="#">
+                <img [tabIndex]="-1" class="" src="../../assets/images/avatar.png" alt=""></a>
+            <div class="name">
+                <h6>henry Clark</h6>
+                <p>Admin manager</p>
+            </div>
+        </div>
+        <div [tabIndex]="-1" class="logo small-logo"><a [tabIndex]="-1" href="#">
+                <img [tabIndex]="-1" src="../../assets/images/avatar.png" alt=""> </a>
+        </div>
+        <div id="open-close" [tabIndex]="-1" (click)="toggleClass()" class="text-end"><a [tabIndex]="-1" href="#"><span><img [tabIndex]="-1" src="../../assets/images/pharmanex-arrow.png" alt=""></span>  </a>
+            <!-- <img src="../../assets/images/close.png" alt=""> -->
+        </div>
+        <ul class="dashboard-tab">
+            <li></li>
+        </ul>
+        <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button [tabIndex]="-1" class="dash-tab dblock active" id="v-pills-dashboard-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-dashboard" type="button" role="tab"
+                aria-controls="v-pills-dashboard" aria-selected="true"> <span class="img-change"><img
+                        class="before-active" src="../../assets/images/home.png" alt=""><img class="after-active"
+                        src="../../assets/images/home-fill.png" alt=""></span> <span class="dnone">Dashboard
+                </span></button>
+            <button class="dash-tab dblock" id="v-pills-calender-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-calender" type="button" role="tab"
+                aria-controls="v-pills-calender" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/graph.png" alt=""><img class="after-active"
+                        src="../../assets/images/graph-fill.png" alt=""></span><span class="dnone">
+                    Sales</span></button>
+            <button class="dash-tab dblock" id="v-pills-sales-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-sales" type="button" role="tab" aria-controls="v-pills-sales"
+                aria-selected="false"><span class="img-change"><img class="before-active"
+                        src="../../assets/images/cash.png" alt=""><img class="after-active"
+                        src="../../assets/images/cash-fill.png" alt=""></span><span class="dnone">
+                    Purchase</span></button>
+            <button class="dash-tab dblock" id="v-pills-clients-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-clients" type="button" role="tab"
+                aria-controls="v-pills-clients" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/stock.png" alt=""><img class="after-active"
+                        src="../../assets/images/stock-fill.png" alt=""></span><span class="dnone">
+                    Inventory</span></button>
+            <button class="dash-tab dblock" id="v-pills-catalouge-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-catalouge" type="button" role="tab"
+                aria-controls="v-pills-catalouge" aria-selected="true"> <span class="img-change"><img
+                        class="before-active" src="../../assets/images/file.png" alt=""><img class="after-active"
+                        src="../../assets/images/file-fill.png" alt=""></span><span class="dnone">Receipts</span>
+            </button>
+            <button class="dash-tab dblock" id="v-pills-profile-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-profile" type="button" role="tab"
+                aria-controls="v-pills-profile" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/payment.png" alt=""><img class="after-active"
+                        src="../../assets/images/payment-fill.png" alt=""></span><span class="dnone">
+                    Payments</span></button>
+            <button class="dash-tab dblock" id="v-pills-promote-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-promote" type="button" role="tab"
+                aria-controls="v-pills-promote" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/calculator.png" alt=""><img
+                        class="after-active" src="../../assets/images/calculator-fill.png" alt=""></span><span
+                    class="dnone">
+                    Accounts</span></button>
+            <button class="dash-tab dblock" id="v-pills-report-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-report" type="button" role="tab" aria-controls="v-pills-report"
+                aria-selected="false"><span class="img-change"><img class="before-active"
+                        src="../../assets/images/tax.png" alt=""><img class="after-active" src="../../assets/images/tax-fill.png"
+                        alt=""></span><span class="dnone">
+                    GST</span></button>
+            <button class="dash-tab dblock" id="v-pills-settings-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-settings" type="button" role="tab"
+                aria-controls="v-pills-settings" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/eye.png" alt=""><img class="after-active"
+                        src="../../assets/images/eye-fill.png" alt=""></span><span class="dnone">
+                    View</span></button>
+            <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-support" type="button" role="tab"
+                aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/files.png" alt=""><img class="after-active"
+                        src="../../assets/images/files-fill.png" alt=""></span><span class="dnone">
+                    Reports</span></button>
+           
+            <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-support" type="button" role="tab"
+                aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/help.png" alt=""><img class="after-active"
+                        src="../../assets/images/help-fill.png" alt=""></span><span class="dnone">
+                    Help & Support </span></button> 
+            <button class="dash-tab dblock" id="v-pills-support-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-support" type="button" role="tab"
+                aria-controls="v-pills-support" aria-selected="false"><span class="img-change"><img
+                        class="before-active" src="../../assets/images/setting.png" alt=""><img class="after-active"
+                        src="../../assets/images/setting-fill.png" alt=""></span><span class="dnone">
+                    Settings</span></button>
+        </div>
+    </div>

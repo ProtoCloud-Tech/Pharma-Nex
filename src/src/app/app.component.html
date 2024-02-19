@@ -1,0 +1,28 @@
+<section class="dashboard-header">
+    <div class="container-fluid ">
+        <div class="main-dashboard row">
+            <div id="left-dash" class="dashboard-leftbar  " [class.remove-width]="isClassAdded">
+                <app-left-sidebar (toggleClassEvent)="handleToggleClass()"></app-left-sidebar>
+            </div>
+
+            <div id="right-dash" class="dashboard-rightbar">
+                <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
+                    aria-labelledby="v-pills-dashboard-tab">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="heading-box">
+                                <h4>Welcome Back</h4>
+                                <p>Have a Good Day!</p>
+                            </div>
+                            <app-customer-details></app-customer-details>
+                            <app-products-detail></app-products-detail>
+                        </div>
+                        <div class="col-lg-3">
+                            <app-invoice-detail></app-invoice-detail>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
