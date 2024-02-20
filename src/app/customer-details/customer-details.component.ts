@@ -24,21 +24,17 @@ import { AutoFocus } from 'primeng/autofocus';
   styleUrl: './customer-details.component.css'
 })
 
-export class CustomerDetailsComponent implements AfterViewInit{
+export class CustomerDetailsComponent implements AfterViewInit {
   @ViewChild('customerDetailsDropdown') customerDetailsDropdown!: Dropdown;
   @ViewChild('docDropdown') docDropdown!: Dropdown;
 
   ngAfterViewInit(): void {
-    this.focusDropdownOnInit();
-  }
-
-  focusDropdownOnInit(): void {
-    if (this.customerDetailsDropdown) {
-      setTimeout(() => {
+    setTimeout(() => {
+       if (this.customerDetailsDropdown) {
         this.customerDetailsDropdown.applyFocus();
-        //this.customerDetailsDropdown.show(true);
-      });
-    }
+        this.customerDetailsDropdown.overlayVisible = true;
+       }
+    });
   }
 
   customersData: Customer[] = [];
@@ -63,46 +59,34 @@ export class CustomerDetailsComponent implements AfterViewInit{
   }
 
   onSelectCustomer(event: any): void {
-    this.selectedGstNumber = event.value.gstNumber;
-    this.selectedCustomerAddress = event.value.address;
+    if (event.value) {
+      this.selectedGstNumber = event.value.gstNumber;
+      this.selectedCustomerAddress = event.value.address;
+    }
   }
 
   onSelectDoctor(event: any): void {
   }
 
   onFocusEvent(event: any) {
-    // console.log("event:", event);
-    // if (event.relatedTarget != null) {
-    //   this.customerDetailsDropdown.show(true);
-    // }
-
-    if (event.sourceCapabilities != null) {
-      this.customerDetailsDropdown.show(true);
-    }
-    else {
-      this.customerDetailsDropdown.hide(true);
+    if (this.customerDetailsDropdown) {
+      if ((event.relatedTarget != null && event.sourceCapabilities != null)) {
+        this.customerDetailsDropdown.show(true);
+      }
+      else {
+        this.customerDetailsDropdown.hide(true);
+      }
     }
   }
 
   onDocFocusEvent(event: any) {
-
-    // let classLength = event.relatedTarget.classList.length;
-    // if (event.relatedTarget != null && classLength > 3) {
-    //   console.log("classLength:", classLength);
-    //   console.log("event:", event);
-    //   this.docDropdown.show(true);
-    // }
-    // if (event.relatedTarget != null && classLength < 4) {
-    //   console.log("classLength:", classLength);
-    //   console.log("event:", event);
-    //   this.docDropdown.hide(true);
-    // }
-
-    if (event.sourceCapabilities != null) {
-      this.docDropdown.show(true);
-    }
-    else {
-      this.docDropdown.hide(true);
+    if (this.docDropdown) {
+      if ((event.relatedTarget != null && event.sourceCapabilities != null)) {
+        this.docDropdown.show(true);
+      }
+      else {
+        this.docDropdown.hide(true);
+      }
     }
   }
 }

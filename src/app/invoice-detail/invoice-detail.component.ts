@@ -69,7 +69,7 @@ export class InvoiceDetailComponent {
       this.invoiceDetail.paid
     );
 
-    console.log(this.invoiceDetail);
+    //console.log(this.invoiceDetail);
   }
   
 }
