@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Product } from '../models/entity-model/product';
 import { ProductService } from './service/productservice';
 import { Item } from '../models/dto-model/item';
@@ -6,7 +6,7 @@ import { SelectItem } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DropdownModule } from 'primeng/dropdown';
+import { Dropdown, DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { AccordionModule } from 'primeng/accordion';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
@@ -24,6 +24,8 @@ import { InvoiceGeneratorService } from '../services/invoice-generator.service';
   styleUrl: './products-detail.component.css'
 })
 export class ProductsDetailComponent implements OnInit {
+  @ViewChildren('dropdownRef') dropdownRefs!: QueryList<Dropdown>;
+
   products: Product[] = [];
   items: Item[] = [];
   selectedItem!: Item;
@@ -63,6 +65,7 @@ export class ProductsDetailComponent implements OnInit {
   }
 
   onProductChange(event: any, item: Item) {
+    //console.log('dropdownevent:', event);
     let productid = event.value;
     let currentProduct: Product | undefined = this.products.find((m) => m.id === productid);
     if (currentProduct) {
@@ -83,13 +86,17 @@ export class ProductsDetailComponent implements OnInit {
     item.discPercent = this.defaultDiscountPercent;
 
     this.reCalculateItems(item);
+
+    let currentDropDownId = this.getCurrentDropDownId(item.id);
+    this.toggleDropDownHide(currentDropDownId);
+
   }
 
   reCalculateItems(item: Item) {
     if (item && item.productId > 0) {
       this.calculateItemAmount(item);
       this.calculateTotalFields();
-     }
+    }
   }
 
   calculateItemAmount(item: Item) {
@@ -127,7 +134,13 @@ export class ProductsDetailComponent implements OnInit {
   }
 
   addItem() {
-    this.items.push(new Item(this.itemCounter++));
+    let newItemId = this.itemCounter++;
+    this.items.push(new Item(newItemId));
+    setTimeout(() => {
+      const dropdownElements = this.dropdownRefs.toArray();
+      if (dropdownElements.length == this.items.length)
+        this.onProductFocusEvent(newItemId);
+    });
   }
 
   deleteItem() {
@@ -148,11 +161,32 @@ export class ProductsDetailComponent implements OnInit {
   }
 
   isAddItemDisabled(): boolean {
-    return (this.items.some(m=>m.productId === 0 ));
+    return (this.items.some(m => m.productId === 0));
   }
 
   isDeleteItemDisabled(): boolean {
     return (this.items.length <= 1);
+  }
+
+  onProductFocusEvent(itemId: number) {
+    let dropDownId = this.getCurrentDropDownId(itemId);
+    this.toggleDropDownShow(dropDownId);
+
+  }
+
+  toggleDropDownShow(dropDownId: string) {
+    let currentProductDrpDown = this.dropdownRefs.find(m => m.id === dropDownId);
+    currentProductDrpDown?.focus();
+    currentProductDrpDown?.show(true);
+  }
+
+  toggleDropDownHide(dropDownId: string) {
+    let currentProductDrpDown = this.dropdownRefs.find(m => m.id === dropDownId);
+    currentProductDrpDown?.hide(true);
+  }
+
+  getCurrentDropDownId(itemId: number): string {
+    return "Prd_" + itemId;
   }
 }
 

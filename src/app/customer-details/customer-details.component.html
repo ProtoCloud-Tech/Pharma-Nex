@@ -16,7 +16,8 @@
                         <p-dropdown #customerDetailsDropdown [options]="customersData"
                             [(ngModel)]="selectedCustomerDetail.customer" optionLabel="name" [showClear]="false"
                             [filter]="true" filterBy="name" (onChange)="onSelectCustomer($event)" [tabindex]="0"
-                            placeholder="Select a Customer" [editable]="true" [autofocus]="true"(onFocus)="onFocusEvent($event)">
+                            placeholder="Select a Customer" (onFocus)="onFocusEvent($event)"
+                            [editable]="true">
                         </p-dropdown>
                         <!-- </div> -->
                     </div>
@@ -49,8 +50,8 @@
                                 <p-dropdown #docDropdown [options]="doctorsData"
                                     [(ngModel)]="selectedCustomerDetail.referredby" optionLabel="name" [filter]="true"
                                     appendTo="body" filterBy="name" (onChange)="onSelectDoctor($event)"
-                                    [showClear]="false" placeholder="Select a Doctor" [editable]="true"
-                                    (onFocus)="onDocFocusEvent($event)">
+                                    [showClear]="false" placeholder="Select a Doctor"
+                                    (onFocus)="onDocFocusEvent($event)" [editable]="true">
                                 </p-dropdown>
 
                             </div>
